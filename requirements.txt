@@ -1,0 +1,7 @@
+pandas
+streamlit
+altair
+lxml
+xlrd
+openpyxl
+numpy==1.23.1
