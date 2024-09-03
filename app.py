@@ -47,7 +47,7 @@ def download_button(object_to_download, download_filename, button_text):
     return dl_link
 
 # Título de la aplicación
-st.title("Generador de archivo ICT para reinversiones en NSQ")
+st.title("Generador de archivo ICT para transferencias en NSQ - Debita de la 1 y acredita en comitentes")
 
 # Subir archivo Excel
 uploaded_file = st.file_uploader("Carga tu archivo de Excel", type=['xlsx'])
@@ -80,8 +80,8 @@ if uploaded_file:
     ict_content = []
 
     for index, row in df.iterrows():
-        SourceCashAccount = f"46/{row['ComitenteNumero']}"
-        ReceivingCashAccount = "46/1"
+        SourceCashAccount = "46/1"
+        ReceivingCashAccount = f"46/{row['ComitenteNumero']}"
         TransactionReference = f"ICT{current_date}{index + 1:03d}"
         PaymentSystem = convert_currency(row['Moneda'])
         Currency = 'USD'
